@@ -97,8 +97,8 @@ function getBoundHttpGet(xmlHref, indice) {
                                 location: location,
                                 floating: true
                             });
-                            
-                            console.log(moment(result.timetable.event[i].$.date + " " + result.timetable.event[i].starttime, 'DD/MM/YYYY HH:mm', true).add(result.timetable.event[i].day[0], 'day').utc().toDate());
+
+                            // console.log(moment(result.timetable.event[i].$.date + " " + result.timetable.event[i].starttime, 'DD/MM/YYYY HH:mm', true).add(result.timetable.event[i].day[0], 'day').utc().toDate());
 
                         } catch (err) {
                             console.log("#####################ERROR");
