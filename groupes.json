@@ -1,0 +1,15 @@
+[
+    {
+        "name": "OD_GI",
+        "href": "http://website.ec-nantes.fr/sites/edtemps/g327.xml"
+    }, {
+        "name": "OD_DataSIM",
+        "href": "http://website.ec-nantes.fr/sites/edtemps/g323.xml"
+    }, {
+        "name": "OP_INGAFF",
+        "href": "http://website.ec-nantes.fr/sites/edtemps/g294.xml"
+    }, {
+        "name": "OP_MLC",
+        "href": "http://website.ec-nantes.fr/sites/edtemps/g296.xml"
+    }
+]

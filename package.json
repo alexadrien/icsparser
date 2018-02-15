@@ -1,0 +1,16 @@
+{
+  "name": "icsparser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ical-generator": "^0.2.10",
+    "moment": "^2.18.1",
+    "xml2js": "^0.4.19"
+  }
+}
