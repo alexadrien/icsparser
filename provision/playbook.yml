@@ -1,0 +1,36 @@
+---
+- name: First test
+  hosts: something
+  remote_user: root
+
+  roles:
+    - {role: jdauphant.nginx}
+    - {role: geerlingguy.nodejs}
+
+  tasks:
+    - name: git clone icsparser
+      git:
+        repo: https://github.com/alexadrien/icsparser.git
+        dest: /home/ubuntu/icsparser
+    - name: install dependencies for icsparser
+      npm:
+        path: /home/ubuntu/icsparser
+    - name: install pm2 globally
+      npm:
+        name: pm2
+        global: yes
+    - name: create folder /var/www/html/icsprovider/ if not exist
+      file:
+        path: /var/www/html/icsprovider/
+        state: directory
+    - name: creation de la configuration nginx
+      template: src=icsprovider dest=/etc/nginx/sites-available/icsprovider
+    - name: creation link available->enabled
+      file: src=/etc/nginx/sites-available/icsprovider dest=/etc/nginx/sites-enabled/icsprovider state=link
+    - name: reload nginx
+      service:
+        name: nginx
+        state: reloaded
+    - name: launch icsparser with pm2
+      shell: cd /home/ubuntu/icsparser/ && pm2 delete icsparser && pm2 start app.js --name "icsparser"
+...

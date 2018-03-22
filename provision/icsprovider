@@ -1,0 +1,10 @@
+server {
+  server_name domaine.name;
+  root /var/www/html;
+
+  location ~* (?<filename>[^/]+\.(ics))$ {
+    add_header Content-Disposition 'attachment; filename="$filename"';
+  }
+
+  index index.html;
+}
