@@ -50,7 +50,9 @@ function getBoundHttpGet(xmlHref, indice) {
             res.on('end', () => {
                 xmlParser(rawData, function (err, result) {
 
-                    var oneCal = ical().timezone('Europe/Paris');
+                    var oneCal = ical({
+                      timezone: 'Europe/Paris'
+                    });
 
                     for (var i = 0; i < result.timetable.event.length; i++) {
                         //            for (var i = 0; i < 1; i++) {
