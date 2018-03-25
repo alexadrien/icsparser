@@ -94,8 +94,8 @@ function getBoundHttpGet(xmlHref, indice) {
                             oneCal.createEvent({
                                 summary: summary,
                                 description: description,
-                                start: moment(result.timetable.event[i].$.date + " " + result.timetable.event[i].starttime, 'DD/MM/YYYY HH:mm', true).add(result.timetable.event[i].day[0], 'day').add(1,"hour").toDate(),
-                                end: moment(result.timetable.event[i].$.date + " " + result.timetable.event[i].endtime, 'DD/MM/YYYY HH:mm', true).add(result.timetable.event[i].day[0], 'day').add(1,"hour").toDate(),
+                                start: moment(result.timetable.event[i].$.date + " " + result.timetable.event[i].starttime, 'DD/MM/YYYY HH:mm', true).add(result.timetable.event[i].day[0], 'day').add(2,"hour").toDate(),
+                                end: moment(result.timetable.event[i].$.date + " " + result.timetable.event[i].endtime, 'DD/MM/YYYY HH:mm', true).add(result.timetable.event[i].day[0], 'day').add(2,"hour").toDate(),
                                 location: location,
                                 floating: true
                             });
